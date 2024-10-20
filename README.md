@@ -49,6 +49,32 @@ The easiest way to set up these scripts is to clone the repository directly from
 
 ---
 
+## Requirements
+
+Before using the script, ensure you have the following Python packages installed:
+
+- **pandas**: For data manipulation and analysis.
+- **openpyxl**: For reading Excel files.
+- **Open Babel**: For converting chemical file formats.
+
+You can install the required Python packages using pip:
+
+```bash
+pip install pandas openpyxl
+```
+
+OpenBabel instalation depends on the operating system:
+
+1) For Ubunto/Debian
+```bash
+sudo apt-get install openbabel
+```
+2) For macOS (using Homebrew)
+```bash
+brew install open-babel
+```
+3) Windows - You need to dowload directly from OpenBabel website
+
 ## Usage
 
 ### Generating Gaussian Input Files
