@@ -15,7 +15,7 @@ The script allows you to customize memory allocation, number of cores, checkpoin
 ### Default Settings:
 - **Memory:** `32 GB` (modifiable with `--mem`)
 - **Cores:** `32` (modifiable with `--proc`)
-- **Theory level:** `B3LYP/def2svp` (modifiable with `--level`)
+- **Theory level:** `ωb97xd/def2svp` (modifiable with `--level`)
 - **Charge:** `0` (modifiable with `--charge`)
 - **Multiplicity:** `1` (modifiable with `--mult`)
 
