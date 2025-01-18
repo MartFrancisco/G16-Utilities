@@ -81,18 +81,18 @@ brew install open-babel
 
 ### Generating Gaussian Input Files
 
-The script `sml_to_g16.py` reads an Excel file with molecule names and SMILES strings and generates Gaussian input files (.com).
+The script `smiles_to_gaussian.py` reads an Excel file with molecule names and SMILES strings and generates Gaussian input files (.com).
 
 #### Running the Script
 
 1. To run the script with default settings:
     ```bash
-    python ~/bin/sml_to_g16.py file_name.xlsx
+    python ~/bin/smiles_to_gaussian.py file_name.xlsx
     ```
 
 2. To modify settings such as memory, cores, theory level, charge, or multiplicity, use flags:
     ```bash
-    python ~/bin/sml_to_g16.py file_name.xlsx --mem 64 --proc 64 --level "wb97xd/6-31+g(d,p)" --charge 1 --mult 2
+    python ~/bin/smiles_to_gaussian.py file_name.xlsx --mem 64 --proc 64 --level "wb97xd/6-31+g(d,p)" --charge 1 --mult 2
     ```
 
 ---
