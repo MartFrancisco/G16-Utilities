@@ -41,12 +41,12 @@ The easiest way to set up these scripts is to clone the repository directly from
 
 3. Move the Python script to your `~/bin/` directory:
     ```bash
-    mv sml_to_g16.py ~/bin/
+    mv smiles_to_gaussian.py ~/bin/
     ```
 
 4. Make the script executable:
     ```bash
-    chmod u+x ~/bin/sml_to_g16.py
+    chmod u+x ~/bin/smiles_to_gaussian.py
     ```
 
 ---
