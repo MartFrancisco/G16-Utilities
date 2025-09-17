@@ -6,12 +6,9 @@ This repository contains utilities for Gaussian16
 
 2) Python script designed to generate IRC plots directly from .out or .log files. The images are generated in high quality for publication.
 
+---
 
-
-
-
-
- 
+Smiles to G16 input file generator 
 
 **Note:** Ensure the Excel file's first row contains the headers "name" and "smiles", as the script filters data based on these keywords.
 Check an excel example [here](https://github.com/MartFrancisco/G16-Utilities/blob/main/molecules.xlsx)
