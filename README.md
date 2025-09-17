@@ -4,7 +4,7 @@ This repository contains utilities for Gaussian16
  
 1) Python script designed to generate Gaussian input files from SMILES strings. It processes Excel files containing molecule names (in the first column) and SMILES strings (in the second column) to create Gaussian input files.
 
-2) Python script designed to generate IRC plots directly from .out or .log files. The images are generated in high quality for publication.
+2) Python script designed to generate Intrinsic Reaction Coordinate (IRC) plots directly from .out or .log files. The images are generated in high quality for publication.
 
 ---
 
@@ -104,5 +104,25 @@ The script `smiles_to_gaussian.py` reads an Excel file with molecule names and S
     ```
 
 ---
+---
 
+Generate high-quality IRC (Intrinsic Reaction Coordinate) energy profile plots
+from Gaussian output files (.out or .log).
+
+Features:
+- Parses Gaussian IRC tables and transition state energy
+- Converts energies to kcal/mol
+- Re-references energies to the first IRC point
+- Optional smoothing with spline interpolation
+- Customizable fonts and font sizes for axes, legend/title, and ticks
+- Saves plots in tiff, jpeg, or jpg formats
+- Output filename automatically matches the input file stem
+
+Usage:
+    python irc_plot.py irc_s0_f_oqm.out --axis_font "Arial" --axis_font_size 16 \
+        --legend_font "Arial" --legend_font_size 16 --tick_font_size 14 \
+        --smooth 0.2 --output_format tiff
+
+---
+---
 Feel free to customize the script and contribute by submitting pull requests or issues!
