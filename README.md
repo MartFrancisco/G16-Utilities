@@ -25,7 +25,7 @@ This script converts molecule data into Gaussian input files.
   - Example: [Bod.com](https://github.com/MartFrancisco/G16-Utilities/blob/main/Bod.com)  
 
 ### Features
-- Customizable memory, cores, checkpoint, and theory level.  
+- Customizable memory, cores, level of theory, charge and multiplicity.  
 - Defaults (modifiable via flags):  
   - **Memory:** `32 GB` → `--mem`  
   - **Cores:** `32` → `--proc`  
@@ -34,11 +34,11 @@ This script converts molecule data into Gaussian input files.
   - **Multiplicity:** `1` → `--mult`  
 
 ### Usage
-```bash
-# Default settings
+
+### Default settings
 python smiles_to_gaussian.py molecules.xlsx
 
-# Custom settings
+### Custom settings
 python smiles_to_gaussian.py molecules.xlsx \
     --mem 64 --proc 64 \
     --level "wb97xd/6-31+g(d,p)" \
@@ -48,9 +48,10 @@ python smiles_to_gaussian.py molecules.xlsx \
 
 ## Installation
 
-### Clone the Repository
+You can either:
 
-The easiest way to set up these scripts is to clone the repository directly from GitHub. Follow these steps:
+- **Download the individual `.py` files** and run them locally, or  
+- **Clone the entire repository** from GitHub, as described bellow.  
 
 1. Load Git on the CHPC (Center for High Performance Computing) environment:
     ```bash
@@ -74,7 +75,7 @@ The easiest way to set up these scripts is to clone the repository directly from
 
 ---
 
-## Requirements
+### Requirements
 
 Before using the script, ensure you have the following Python packages installed:
 
@@ -100,44 +101,35 @@ brew install open-babel
 ```
 3) Windows - You need to dowload directly from OpenBabel website
 
-## Usage
+---
 
-### Generating Gaussian Input Files
+## 2. IRC plot Generator
 
-The script `smiles_to_gaussian.py` reads an Excel file with molecule names and SMILES strings and generates Gaussian input files (.com).
+Generate publication-quality IRC energy profile plots from Gaussian output file
 
-#### Running the Script
+Features
+Parses Gaussian IRC tables and transition state energy
+Converts energies to kcal/mol
+References energies to the first IRC point
+Optional spline smoothing (--smooth)
+Customizable fonts (axes, legend/title, ticks)
+Saves plots as: .tiff, .jpeg, .jpg
+Output filename automatically matches the input file stem
 
-1. To run the script with default settings:
-    ```bash
-    python ~/bin/smiles_to_gaussian.py file_name.xlsx
-    ```
+### Basic usage
+python irc_plot.py irc_output.out
 
-2. To modify settings such as memory, cores, theory level, charge, or multiplicity, use flags:
-    ```bash
-    python ~/bin/smiles_to_gaussian.py file_name.xlsx --mem 64 --proc 64 --level "wb97xd/6-31+g(d,p)" --charge 1 --mult 2
-    ```
-
+### With customization
+python irc_plot.py irc_s0_f_oqm.out \
+    --axis_font "Arial" --axis_font_size 16 \
+    --legend_font "Arial" --legend_font_size 16 \
+    --tick_font_size 14 \
+    --smooth 0.2 \
+    --output_format tiff
+    
 ---
 ---
 
-Generate high-quality IRC (Intrinsic Reaction Coordinate) energy profile plots
-from Gaussian output files (.out or .log).
-
-Features:
-- Parses Gaussian IRC tables and transition state energy
-- Converts energies to kcal/mol
-- Re-references energies to the first IRC point
-- Optional smoothing with spline interpolation
-- Customizable fonts and font sizes for axes, legend/title, and ticks
-- Saves plots in tiff, jpeg, or jpg formats
-- Output filename automatically matches the input file stem
-
-Usage:
-    python irc_plot.py irc_s0_f_oqm.out --axis_font "Arial" --axis_font_size 16 \
-        --legend_font "Arial" --legend_font_size 16 --tick_font_size 14 \
-        --smooth 0.2 --output_format tiff
-
----
----
-Feel free to customize the script and contribute by submitting pull requests or issues!
+🤝 Contributing
+Contributions are welcome!
+Feel free to open an issue or submit a pull request with improvements, bug fixes, or new features.
