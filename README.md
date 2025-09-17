@@ -1,6 +1,10 @@
 # Gaussian 16 Utilities
 
-This repository contains a Python script designed to generate Gaussian input files from SMILES strings. It processes Excel files containing molecule names (in the first column) and SMILES strings (in the second column) to create Gaussian input files.
+This repository contains utilities for Gaussian16
+ 
+1) Python script designed to generate Gaussian input files from SMILES strings. It processes Excel files containing molecule names (in the first column) and SMILES strings (in the second column) to create Gaussian input files. [Cheeck here](https://github.com/MartFrancisco/G16-Utilities/tree/Input-generator-from-SMILES)
+
+2) Python script designed to generate IRC plots directly from .out or .log files. The images are generated in high quality for publication. [Check here] (https://github.com/MartFrancisco/G16-Utilities/tree/IRC-figure-generator)
 
 **Note:** Ensure the Excel file's first row contains the headers "name" and "smiles", as the script filters data based on these keywords.
 Check an excel example [here](https://github.com/MartFrancisco/G16-Utilities/blob/main/molecules.xlsx)
