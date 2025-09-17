@@ -2,11 +2,13 @@
 
 This repository contains **Python utilities for Gaussian 16**:  
 
-1. **SMILES → Gaussian input generator**  
+1. **SMILES → Gaussian input generator**
+   [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/input_generator)
    - Reads SMILES strings from Excel/TXT files.  
    - Generates Gaussian input files (`.com`).  
 
-2. **IRC plot generator**  
+3. **IRC plot generator**
+   [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/irc_generator)
    - Parses Gaussian IRC (`.out` / `.log`) files.  
    - Produces **high-quality, publication-ready energy profile plots**.  
 
