@@ -133,5 +133,6 @@ python irc_plot.py irc_s0_f_oqm.out \
 ---
 
 🤝 Contributing
+
 Contributions are welcome!
 Feel free to open an issue or submit a pull request with improvements, bug fixes, or new features.
