@@ -7,17 +7,19 @@ The repository contains *Python utilities for Gaussian 16*.
 - [NICS Scan Preparation](#nics-scan) 
 - [Installations](#install) 
 
+---
+---
+---
+
 <!-- headings -->
 <a id="inp-gen"></a>
 
-**Gaussian Input Generator from SMILESr**
+**Gaussian Input Generator from SMILES**
    [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/input_generator)
-   - Reads SMILES strings from Excel/TXT files.  
+   - Reads SMILES strings from Excel or txt files.  
    - Generates Gaussian input files (`.com`). 
 
-   This script converts molecule data into Gaussian input files.
-
-- **Input format**:  
+- **Input format for the code**:  
   - **Excel file** (`.xlsx`) with columns `name` and `smiles` (first row = headers).  
     - Example: [molecules.xlsx](https://github.com/MartFrancisco/G16-Utilities/blob/main/molecules.xlsx)  
   - **Text file** (`.txt`) with `name smiles` (separated by whitespace).  
@@ -36,10 +38,10 @@ The repository contains *Python utilities for Gaussian 16*.
 
 ### Usage
 
-#### Default settings
+#### 1) Default settings
 python smiles_to_gaussian.py molecules.xlsx
 
-#### Custom settings
+#### 2) Custom settings
 python smiles_to_gaussian.py molecules.xlsx \
     --mem 64 --proc 64 \
     --level "wb97xd/6-31+g(d,p)" \
@@ -52,27 +54,26 @@ python smiles_to_gaussian.py molecules.xlsx \
 
 **Intrinsic Reaction Coordinates Figures**
    [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/irc_generator)
-   - Parses Gaussian IRC (`.out` / `.log`) files.  
+   - Parses Gaussian IRC (`.out` or `.log`) files.  
    - Produces **high-quality, publication-ready energy profile plots**.  
 
-
-Generate publication-quality IRC energy profile plots from Gaussian output file
-
 ### Features
-Parses Gaussian IRC tables and transition state energy
-Converts energies to kcal/mol
-References energies to the first IRC point
-Optional spline smoothing (--smooth)
-Customizable fonts (axes, legend/title, ticks)
-Saves plots as: .tiff, .jpeg, .jpg
-Output filename automatically matches the input file stem
+- Customizable font axis, legend, title, tick marks, image format (.tiff, .jpeg, .jpg).
+- Defaults (modifiable via flags): 
+  - **Axis font:** `Arial` → `--axis_font`  
+  - **Axis font size:** `16` → `--axis_font_size`  
+  - **Legend font:** `Arial` → `--legend_font`  
+  - **Legend font size:** `16` → `--legend_font_size`  
+  - **Tick font size:** `14` → `--tick_font_size`  
+  - **Smooth:** `0.0` → `--smooth`  
+  - **Figure format:** `.tiff` → `--output_format` 
 
 ### Usage
 
-#### Default settings
+#### 1) Default settings
 python irc_plot.py irc_output.out
 
-#### Custom settings
+#### 2) Custom settings
 python irc_plot.py irc_s0_f_oqm.out \
     --axis_font "Arial" --axis_font_size 16 \
     --legend_font "Arial" --legend_font_size 16 \
@@ -86,6 +87,8 @@ python irc_plot.py irc_s0_f_oqm.out \
 <a id="nics-scan"></a>
 
 **Under Construction**
+
+---
 
 <!-- headings -->
 <a id="install"></a>
