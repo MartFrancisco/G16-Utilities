@@ -14,7 +14,7 @@ The repository contains *Python utilities for Gaussian 16*.
 <!-- headings -->
 <a id="inp-gen"></a>
 
-**Gaussian Input Generator from SMILES**
+## **Gaussian Input Generator from SMILES**
    [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/input_generator)
    - Reads SMILES strings from Excel or txt files.  
    - Generates Gaussian input files (`.com`). 
@@ -52,7 +52,7 @@ python smiles_to_gaussian.py molecules.xlsx \
 <!-- headings -->
 <a id="irc-gen"></a>
 
-**Intrinsic Reaction Coordinates Figures**
+## **Intrinsic Reaction Coordinates Figures**
    [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/irc_generator)
    - Parses Gaussian IRC (`.out` or `.log`) files.  
    - Produces **high-quality, publication-ready energy profile plots**.  
@@ -85,6 +85,8 @@ python irc_plot.py irc_s0_f_oqm.out \
 
 <!-- headings -->
 <a id="nics-scan"></a>
+
+## **NICS Scan Preparation**
 
 **Under Construction**
 
