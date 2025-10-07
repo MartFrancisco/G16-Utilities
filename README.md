@@ -1,22 +1,21 @@
 # Gaussian 16 Utilities
+This repository contains **Python utilities for Gaussian 16**:
+You are welcome to contribute to this project!
 
-This repository contains **Python utilities for Gaussian 16**:  
+**Table of content:**
+- [Gaussian Input Generator from SMILES](#inp-gen)
+- [Intrinsic Reaction Coordinates Figures](#irc-gen)
+- [NICS Scan Preparation](#nics-scan)  
 
-1. **SMILES → Gaussian input generator**
+<!-- headings -->
+<a id="inp-gen"></a>
+
+**Gaussian Input Generator from SMILESr**
    [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/input_generator)
    - Reads SMILES strings from Excel/TXT files.  
-   - Generates Gaussian input files (`.com`).  
+   - Generates Gaussian input files (`.com`). 
 
-3. **IRC plot generator**
-   [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/irc_generator)
-   - Parses Gaussian IRC (`.out` / `.log`) files.  
-   - Produces **high-quality, publication-ready energy profile plots**.  
-
----
-
-## 1. SMILES → Gaussian Input Generator
-
-This script converts molecule data into Gaussian input files.
+   This script converts molecule data into Gaussian input files.
 
 - **Input format**:  
   - **Excel file** (`.xlsx`) with columns `name` and `smiles` (first row = headers).  
@@ -103,9 +102,16 @@ brew install open-babel
 ```
 3) Windows - You need to dowload directly from OpenBabel website
 
----
+--- 
 
-## 2. IRC plot Generator
+<!-- headings -->
+<a id="irc-gen"></a>
+
+**Intrinsic Reaction Coordinates Figures**
+   [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/irc_generator)
+   - Parses Gaussian IRC (`.out` / `.log`) files.  
+   - Produces **high-quality, publication-ready energy profile plots**.  
+
 
 Generate publication-quality IRC energy profile plots from Gaussian output file
 
@@ -131,6 +137,9 @@ python irc_plot.py irc_s0_f_oqm.out \
     
 ---
 ---
+
+<!-- headings -->
+<a id="nics-scan"></a>
 
 🤝 Contributing
 
