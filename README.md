@@ -1,11 +1,11 @@
 # Gaussian 16 Utilities
-This repository contains **Python utilities for Gaussian 16**:
-You are welcome to contribute to this project!
+The repository contains *Python utilities for Gaussian 16*.
 
 **Table of content:**
 - [Gaussian Input Generator from SMILES](#inp-gen)
 - [Intrinsic Reaction Coordinates Figures](#irc-gen)
-- [NICS Scan Preparation](#nics-scan)  
+- [NICS Scan Preparation](#nics-scan) 
+- [Installations](#install) 
 
 <!-- headings -->
 <a id="inp-gen"></a>
@@ -36,16 +36,59 @@ You are welcome to contribute to this project!
 
 ### Usage
 
-### Default settings
+#### Default settings
 python smiles_to_gaussian.py molecules.xlsx
 
-### Custom settings
+#### Custom settings
 python smiles_to_gaussian.py molecules.xlsx \
     --mem 64 --proc 64 \
     --level "wb97xd/6-31+g(d,p)" \
     --charge 1 --mult 2
 
 ---
+
+<!-- headings -->
+<a id="irc-gen"></a>
+
+**Intrinsic Reaction Coordinates Figures**
+   [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/irc_generator)
+   - Parses Gaussian IRC (`.out` / `.log`) files.  
+   - Produces **high-quality, publication-ready energy profile plots**.  
+
+
+Generate publication-quality IRC energy profile plots from Gaussian output file
+
+### Features
+Parses Gaussian IRC tables and transition state energy
+Converts energies to kcal/mol
+References energies to the first IRC point
+Optional spline smoothing (--smooth)
+Customizable fonts (axes, legend/title, ticks)
+Saves plots as: .tiff, .jpeg, .jpg
+Output filename automatically matches the input file stem
+
+### Usage
+
+#### Default settings
+python irc_plot.py irc_output.out
+
+#### Custom settings
+python irc_plot.py irc_s0_f_oqm.out \
+    --axis_font "Arial" --axis_font_size 16 \
+    --legend_font "Arial" --legend_font_size 16 \
+    --tick_font_size 14 \
+    --smooth 0.2 \
+    --output_format tiff
+    
+---
+
+<!-- headings -->
+<a id="nics-scan"></a>
+
+**Under Construction**
+
+<!-- headings -->
+<a id="install"></a>
 
 ## Installation
 
@@ -103,43 +146,6 @@ brew install open-babel
 3) Windows - You need to dowload directly from OpenBabel website
 
 --- 
-
-<!-- headings -->
-<a id="irc-gen"></a>
-
-**Intrinsic Reaction Coordinates Figures**
-   [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/irc_generator)
-   - Parses Gaussian IRC (`.out` / `.log`) files.  
-   - Produces **high-quality, publication-ready energy profile plots**.  
-
-
-Generate publication-quality IRC energy profile plots from Gaussian output file
-
-Features
-Parses Gaussian IRC tables and transition state energy
-Converts energies to kcal/mol
-References energies to the first IRC point
-Optional spline smoothing (--smooth)
-Customizable fonts (axes, legend/title, ticks)
-Saves plots as: .tiff, .jpeg, .jpg
-Output filename automatically matches the input file stem
-
-### Basic usage
-python irc_plot.py irc_output.out
-
-### With customization
-python irc_plot.py irc_s0_f_oqm.out \
-    --axis_font "Arial" --axis_font_size 16 \
-    --legend_font "Arial" --legend_font_size 16 \
-    --tick_font_size 14 \
-    --smooth 0.2 \
-    --output_format tiff
-    
----
----
-
-<!-- headings -->
-<a id="nics-scan"></a>
 
 🤝 Contributing
 
