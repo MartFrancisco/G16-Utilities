@@ -119,8 +119,8 @@ For anthracene, the notebook generates the following [numbering scheme](https://
 
 You can define different paths:  
 
-- **Path 1:** `2, R3, 8, R2, 17, R1, 24` — [example](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/antracene_dh2/example_path_1.png)  
-- **Path 2:** `1, R3, 8, R2, 17, R1, 20` — [example](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/antracene_dh2/example_path_2.png)  
+- **Path 1:** `2, R3, 8, R2, 17, R1, 24` — [example](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/antracene_d2h/example_path_1.png)  
+- **Path 2:** `1, R3, 8, R2, 17, R1, 20` — [example](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/antracene_d2h/example_path_2.png)  
 
 > The generated `.com` file can then be submitted to Gaussian 16.
 
