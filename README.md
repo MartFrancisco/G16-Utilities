@@ -85,20 +85,71 @@ python irc_plot.py irc_s0_f_oqm.out \
 
 ## **NICS Scan Preparation** [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan)
 
-*This section is under construction. Therefore, I suggest downloading the files and run in JupyterLab. A bried explanation is given bellow on how the code works*
+**This section is under construction.** For now, it is recommended to download the files and run them in **JupyterLab**. A brief explanation of how the code works is given below.
 
-The code (.ipynb format) is divided in two parts. 
-1) The first one [input_preparation](ttps://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/input_preparation.ipynb) is to help creating G16 input files (.com) from a XYZ file of the optimized structure. 
-2) The second file [output_processing](ttps://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/output_processing.ipynb)is to process G16 output files and generate data points to plot the ghost atom path.
+The repository contains two main Jupyter notebooks for performing NICS (Nucleus Independent Chemical Shift) scans using **Gaussian 16 (G16)**:
 
-In order run NICS scan and to obtain ZZ values, the molecule needs to be in the XY plane. 
-After making sure the molecule is optimized and in the XY plane, use the **input_preparation.ipynb** file. This code will generate a G16 .com file and you can submit for calculation in a high-performance computer. You need to adjust the code to retrieve your XYZ file and save with the desired name. You will be able to edit in JupyterLab.
+1. **[input_preparation.ipynb](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/input_preparation.ipynb)**  
+   Prepares G16 input files (`.com`) from an optimized XYZ structure.
 
-**input_preparation.ipynb** Gets XYZ structure, builds graphs to represent a molecule and also represent key points on the molecule that may serve as a path for the ghost atoms. It will show middle points in bonded atoms and middle points in the rings. You will be required to select where the ghost atom will follow. For example, passing antracene XYZ will generate the following structue [example numbering](ttps://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/example_numbering.png). You can select a path, for example path 1, where the ghost atoms are going through 2,R3,8,R2,17,R1,24 [path 1](ttps://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/example_path_1.png) or path 2, where the ghost atoms follow 1,R3,8,R2,17,R1,20 [path 2](ttps://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/example_path_2.png)
+2. **[output_processing.ipynb](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/output_processing.ipynb)**  
+   Processes G16 output files to generate data points for plotting the ghost atom path.
 
-**output_processing.ipynb** Gets the output file from G16 calculation and obtains NICS(1)ZZ (in ppm). Again, you should adjust the file names to retrieve correctly on JupyterLab. It will generate a TXT file in which the first colum is the distances of the ghost atoms, and the second column is the NICS(1)ZZ values of the respective ghost atom. With the datapoints you are able to plot NICS scan curves. I gave one example here [NICS scan plot](ttps://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/presentation1.tiff)
+---
 
-I ran G16 NMR calculation on path 2 and the example of input, output, and other related files. You can check in the [NICS scan foldert](ttps://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/)
+## Workflow Overview
+
+1. Ensure your molecule is optimized and oriented in the **XY plane** (necessary for accurate NICS ZZ calculations).  
+2. Run **input_preparation.ipynb** to generate a G16 `.com` input file. Adjust the code to load your XYZ file and save with the desired name.  
+3. Submit the `.com` file for calculation on a high-performance computer.  
+4. Once the calculation is finished, run **output_processing.ipynb** to extract NICS(1)ZZ values and generate a text file with the results.  
+
+---
+
+## `input_preparation.ipynb`
+
+- Loads an XYZ structure and builds a molecular graph.  
+- Identifies **key points** for the ghost atom path:  
+  - Midpoints of bonds  
+  - Centroids of rings  
+- The user selects a path for the ghost atom.  
+
+**Example:**  
+For anthracene, the notebook generates the following [numbering scheme](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/example_numbering.png).  
+
+You can define different paths:  
+
+- **Path 1:** `2, R3, 8, R2, 17, R1, 24` — [example](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/example_path_1.png)  
+- **Path 2:** `1, R3, 8, R2, 17, R1, 20` — [example](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/example_path_2.png)  
+
+> The generated `.com` file can then be submitted to Gaussian 16.
+
+---
+
+## `output_processing.ipynb`
+
+- Loads the Gaussian 16 output file.  
+- Extracts **NICS(1)ZZ values** (ppm) along the selected ghost atom path.  
+- Generates a TXT file with:  
+  - **Column 1:** Ghost atom distances  
+  - **Column 2:** NICS(1)ZZ values  
+
+These data points can be used to plot NICS scan curves.  
+Example plot: [NICS scan](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/presentation1.tiff)
+
+---
+
+## Examples and Data
+
+- Example input and output files (including paths) are available in the [NICS scan folder](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/).  
+- The example uses **Path 2** for the ghost atom scan.  
+
+---
+
+## Notes
+
+- You need to edit the notebook paths and filenames according to your system.  
+- It is recommended to run the notebooks in **JupyterLab** for easy interaction with input structures and ghost atom paths.  
 
 ---
 
