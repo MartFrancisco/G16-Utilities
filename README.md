@@ -9,7 +9,6 @@ The repository contains *Python utilities for Gaussian 16*.
 
 ---
 ---
----
 
 <!-- headings -->
 <a id="inp-gen"></a>
