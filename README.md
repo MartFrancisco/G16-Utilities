@@ -135,7 +135,7 @@ You can define different paths:
   - **Column 2:** NICS(1)ZZ values  
 
 These data points can be used to plot NICS scan curves.  
-Example plot: [NICS scan](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/presentation1.tiff)
+Example plot: [NICS scan](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/antracene_d2h/presentation1.tiff)
 
 ---
 
