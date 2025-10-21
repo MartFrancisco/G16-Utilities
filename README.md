@@ -83,9 +83,73 @@ python irc_plot.py irc_s0_f_oqm.out \
 <!-- headings -->
 <a id="nics-scan"></a>
 
-## **NICS Scan Preparation**
+## **NICS Scan Preparation** [Check here](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan)
 
-**Under Construction**
+**This section is under construction.** For now, it is recommended to download the files and run them in **JupyterLab**. A brief explanation of how the code works is given below.
+
+The repository contains two main Jupyter notebooks for performing NICS (Nucleus Independent Chemical Shift) scans using **Gaussian 16 (G16)**:
+
+1. **[input_preparation.ipynb](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/input_preparation.ipynb)**  
+   Prepares G16 input files (`.com`) from an optimized XYZ structure.
+
+2. **[output_processing.ipynb](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/output_processing.ipynb)**  
+   Processes G16 output files to generate data points for plotting the ghost atom path.
+
+---
+
+## Workflow Overview
+
+1. Ensure your molecule is optimized and oriented in the **XY plane** (necessary for accurate NICS ZZ calculations).  
+2. Run **input_preparation.ipynb** to generate a G16 `.com` input file. Adjust the code to load your XYZ file and save with the desired name.  
+3. Submit the `.com` file for calculation on a high-performance computer.  
+4. Once the calculation is finished, run **output_processing.ipynb** to extract NICS(1)ZZ values and generate a text file with the results.  
+
+---
+
+## `input_preparation.ipynb`
+
+- Loads an XYZ structure and builds a molecular graph.  
+- Identifies **key points** for the ghost atom path:  
+  - Midpoints of bonds  
+  - Centroids of rings  
+- The user selects a path for the ghost atom.  
+
+**Example:**  
+For anthracene, the notebook generates the following [numbering scheme](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/antracene_d2h/example_numbering.png).  
+
+You can define different paths:  
+
+- **Path 1:** `2, R3, 8, R2, 17, R1, 24` — [example](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/antracene_d2h/example_path_1.png)  
+- **Path 2:** `1, R3, 8, R2, 17, R1, 20` — [example](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/antracene_d2h/example_path_2.png)  
+
+> The generated `.com` file can then be submitted to Gaussian 16.
+
+---
+
+## `output_processing.ipynb`
+
+- Loads the Gaussian 16 output file.  
+- Extracts **NICS(1)ZZ values** (ppm) along the selected ghost atom path.  
+- Generates a TXT file with:  
+  - **Column 1:** Ghost atom distances  
+  - **Column 2:** NICS(1)ZZ values  
+
+These data points can be used to plot NICS scan curves.  
+Example plot: [NICS scan](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/antracene_d2h/presentation1.tiff)
+
+---
+
+## Examples and Data
+
+- Example input and output files (including paths) are available in the [NICS scan folder](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/).  
+- The example uses **Path 2** for the ghost atom scan.  
+
+---
+
+## Notes
+
+- You need to edit the notebook paths and filenames according to your system.  
+- It is recommended to run the notebooks in **JupyterLab** for easy interaction with input structures and ghost atom paths.  
 
 ---
 
