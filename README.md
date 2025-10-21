@@ -115,7 +115,7 @@ The repository contains two main Jupyter notebooks for performing NICS (Nucleus 
 - The user selects a path for the ghost atom.  
 
 **Example:**  
-For anthracene, the notebook generates the following [numbering scheme](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/antracene_dh2/example_numbering.png).  
+For anthracene, the notebook generates the following [numbering scheme](https://github.com/MartFrancisco/G16-Utilities/tree/main/nics_scan/antracene_d2h/example_numbering.png).  
 
 You can define different paths:  
 
